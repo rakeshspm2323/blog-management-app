@@ -1,68 +1,82 @@
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import BlogPagination from "@/components/BlogPagination";
+import { useEffect, useState } from "react";
+import Link from "next/link";
 
-// const fetchBlog = async () => {
-//   const res = await fetch("/api/add-blog");
-//   return await res.json();
-// };
+const fetchBlog = async () => {
+  const res = await fetch("/api/add-blog");
+  return await res.json();
+};
 
-const BlogPage = () => {
-  // const [allBlog, setAllBlog] = useState([]);
-  // const [loading, setLoading] = useState(true);
+const BlogPagination = () => {
+  const [allBlog, setAllBlog] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  // const [currentPage, setCurrentPage] = useState(1);
-  // const postsPerPage = 4;
+  const [currentPage, setCurrentPage] = useState(1);
+  const postsPerPage = 4;
 
-  // useEffect(() => {
-  //   fetchBlog().then((res) => {
-  //     setAllBlog(res?.data || []);
-  //     setLoading(false);
-  //   });
-  // }, []);
+  useEffect(() => {
+    fetchBlog().then((res) => {
+      setAllBlog(res?.data || []);
+        setLoading(false);
+    });
+  }, []);
 
-  // const totalPages = Math.ceil(allBlog.length / postsPerPage);
-  // const startIdx = (currentPage - 1) * postsPerPage;
-  // const currentPosts = allBlog
-  //   .slice()
-  //   .reverse()
-  //   .slice(startIdx, startIdx + postsPerPage);
+  const totalPages = Math.ceil(allBlog.length / postsPerPage);
+  const startIdx = (currentPage - 1) * postsPerPage;
+  const currentPosts = allBlog
+    .slice()
+    .reverse()
+    .slice(startIdx, startIdx + postsPerPage);
 
-  // const handlePageChange = (pageNumber) => {
-  //   if (pageNumber > 0 && pageNumber <= totalPages) {
-  //     setCurrentPage(pageNumber);
-  //   }
-  // };
+  const handlePageChange = (pageNumber) => {
+    if (pageNumber > 0 && pageNumber <= totalPages) {
+      setCurrentPage(pageNumber);
+    }
+  };
 
-  // if (loading)
-  //   return (
-  //     <>
-  //       <div className="container mx-auto">
+  if (loading)
+    return (
+      <>
+        <div className="container mx-auto mt-7">
+          <div className="flex justify-between mb-7">
+            <div className="h-10 w-[30%] bg-gray-300 rounded"></div>
+            <div className="h-10 w-[20%] bg-gray-300 rounded"></div>
+          </div>
+          <div className="grid grid-cols-2 gap-6">
+            <div className="p-6 rounded-lg shadow-md bg-white animate-pulse">
+              <div>
+                <div className="h-10 bg-gray-300 rounded mb-7"></div>
+                <div className="h-4 bg-gray-300 rounded mb-3"></div>
+                <div className="h-4 bg-gray-300 rounded mb-3"></div>
+                <div className="h-4 bg-gray-300 rounded mb-3"></div>
+                <div className="h-4 bg-gray-300 rounded mb-7"></div>
 
-  //         <div className="grid grid-cols-1 gap-6">
-  //           <div className="p-6 rounded-lg shadow-md bg-white animate-pulse">
-  //             <div>
-  //                 <div className="h-10 w-[20%] bg-gray-300 rounded mb-7"></div>
-  //                 <div className="h-10 bg-gray-300 rounded mb-7"></div>
-  //                 <div className="h-4 bg-gray-300 rounded mb-3"></div>
-  //                 <div className="h-4 bg-gray-300 rounded mb-3"></div>
-  //                 <div className="h-4 bg-gray-300 rounded mb-3"></div>
-  //                 <div className="h-4 bg-gray-300 rounded mb-3"></div>
-  //                 <div className="h-4 bg-gray-300 rounded mb-7"></div>
+                <div className="mt-4">
+                  <div className="h-10 bg-green-200 rounded-md mb-4"></div>
+                  <div className="h-10 bg-orange-200 rounded-md"></div>
+                </div>
+              </div>
+            </div>
+            <div className="p-6 rounded-lg shadow-md bg-white animate-pulse">
+              <div>
+                <div className="h-10 bg-gray-300 rounded mb-7"></div>
+                <div className="h-4 bg-gray-300 rounded mb-3"></div>
+                <div className="h-4 bg-gray-300 rounded mb-3"></div>
+                <div className="h-4 bg-gray-300 rounded mb-3"></div>
+                <div className="h-4 bg-gray-300 rounded mb-7"></div>
 
-  //               <div className="mt-4">
-  //                   <div className="h-10 bg-blue-200 rounded-md"></div>
-  //               </div>
-  //             </div>
-  //           </div>
-  //         </div>
-  //       </div>
-  //     </>
-  //   );
+                <div className="mt-4">
+                  <div className="h-10 bg-green-200 rounded-md mb-4"></div>
+                  <div className="h-10 bg-orange-200 rounded-md"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </>
+    );
   return (
     <>
-      <Header />
-      {/* <div className="container mx-auto">
+      <div className="container mx-auto">
         <div className="my-7 lg:px-0 px-2">
           <div className="flex justify-between md:items-center items-start mb-4">
             <h1 className="md:block hidden md:text-2xl text-[17px] font-bold text-gray-700">
@@ -108,6 +122,7 @@ const BlogPage = () => {
               </div>
             ))}
           </div>
+          {/* Pagination */}
           <div className="flex md:justify-end justify-center items-center space-x-2 mt-10 mb-6">
             <button
               onClick={() => handlePageChange(currentPage - 1)}
@@ -151,11 +166,9 @@ const BlogPage = () => {
             </button>
           </div>
         </div>
-      </div> */}
-      <BlogPagination />
-      <Footer />
+      </div>
     </>
   );
 };
 
-export default BlogPage;
+export default BlogPagination;

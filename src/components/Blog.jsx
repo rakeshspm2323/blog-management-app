@@ -8,12 +8,51 @@ const fetchBlog = async () => {
 
 const Blog = () => {
   const [allBlog, setAllBlog] = useState([]);
+  const [loading, setLoading] = useState(true); 
 
   useEffect(() => {
     fetchBlog().then((res) => {
       setAllBlog(res?.data || []);
+      setLoading(false);
     });
   }, []);
+
+  if (loading)
+    return (
+      <>
+        <div className="container mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {[1, 2].map((item) => (
+              <div
+                key={item}
+                className="p-6 rounded-lg shadow-md bg-white animate-pulse"
+              >
+                <div>
+                  <div className="h-6 bg-gray-300 rounded w-3/4 mb-4"></div>
+                  <div className="h-4 bg-gray-300 rounded w-full mb-2"></div>
+                  <div className="h-4 bg-gray-300 rounded w-5/6 mb-4"></div>
+
+                  <div className="mt-4 flex space-x-2">
+                    <div className="w-[50%] h-10 bg-green-100 rounded-md"></div>
+                    <div className="w-[50%] h-10 bg-yellow-100 rounded-md"></div>
+                  </div>
+                </div>
+                <div className="mt-10">
+                  <div className="h-6 bg-gray-300 rounded w-3/4 mb-4"></div>
+                  <div className="h-4 bg-gray-300 rounded w-full mb-2"></div>
+                  <div className="h-4 bg-gray-300 rounded w-5/6 mb-4"></div>
+
+                  <div className="mt-4 flex space-x-2">
+                    <div className="w-[50%] h-10 bg-green-100 rounded-md"></div>
+                    <div className="w-[50%] h-10 bg-yellow-100 rounded-md"></div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </>
+    );
 
 
   return (

@@ -2,9 +2,8 @@ import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Blog from '@/components/Blog';
-import { useEffect, useState } from 'react';
 
-export default function Home() {
+const Home = () => {
 
   return (
     <>
@@ -23,3 +22,5 @@ export default function Home() {
     </>
   );
 }
+
+export default Home;
