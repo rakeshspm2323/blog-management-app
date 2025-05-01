@@ -18,7 +18,7 @@ const Header = () => {
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <div className="flex justify-center items-center gap-2">
             <Image
-              src=""
+              src="/assets/logoBlog.png"
               className="object-cover"
               alt="logo"
               width={40}
@@ -60,7 +60,7 @@ const Header = () => {
           <div className="lg:hidden px-4 pb-4">
             <nav className="flex flex-col space-y-4">
               <Link
-                href="/"
+                href="/blog"
                 className="text-sm font-medium text-gray-700 hover:text-blue-500 hover:underline underline-offset-2"
               >
                 All Blogs 

@@ -42,10 +42,10 @@ const Footer = () => {
               <h3 className="text-md font-semibold mb-3">Useful Links</h3>
               <ul className="space-y-3 text-sm">
                 <li>
-                  <Link href="/post" className="hover:underline text-gray-500 hover:text-gray-700">Blog</Link>
+                  <Link href="/blog" className="hover:underline text-gray-500 hover:text-gray-700">Blog</Link>
                 </li>
                 <li>
-                  <Link href="/post/new" className="hover:underline text-gray-500 hover:text-gray-700">Create New Blog</Link>
+                  <Link href="/blog/new" className="hover:underline text-gray-500 hover:text-gray-700">Create New Blog</Link>
                 </li>
                 <li>
                   <Link href="/" className="hover:underline text-gray-500 hover:text-gray-700">Privacy Policy</Link>
@@ -81,7 +81,7 @@ const Footer = () => {
             <div>
               <div className="flex items-center space-x-2">
                 <img
-                  src=""
+                  src="/assets/logoBlog.png"
                   width={100}
                   height={100}
                   alt="Logo"
