@@ -15,7 +15,7 @@ const Header = () => {
   return (
     <header>
       <div className="bg-white shadow-md w-full">
-        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+        <div className="px-4 py-4 flex justify-between items-center">
           <div className="flex justify-center items-center gap-2">
             <Image
               src="/assets/logoBlog.png"
@@ -25,11 +25,16 @@ const Header = () => {
               height={40}
             />
             <p className="md:text-3xl text-md font-bold text-black text-nowrap">
-              Blog <span className="text-blue-500">Management</span>
+              Blog <span className="text-blue-500">Ease</span>
             </p>
           </div>
-          <div className="lg:block hidden">
+          <div className="lg:flex gap-5 hidden">
             <SearchBar /> 
+            <Link href="/blog/new"
+              className="bg-blue-500 text-sm text-nowrap text-white px-4 py-2 rounded-md hover:bg-blue-400 transition-colors duration-300"
+            >
+              Post Your Blog
+            </Link>
           </div>
           {/* Hamburger Button */}
           <div className="lg:hidden">
@@ -57,13 +62,19 @@ const Header = () => {
         </div>
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="lg:hidden px-4 pb-4">
+          <div className="absolute z-50 w-full left-0 lg:hidden px-4 py-4 bg-gray-100 h-56 max-h-72">
             <nav className="flex flex-col space-y-4">
               <Link
                 href="/blog"
                 className="text-sm font-medium text-gray-700 hover:text-blue-500 hover:underline underline-offset-2"
               >
                 All Blogs 
+              </Link>
+              <Link
+                href="/blog/new"
+                className="text-sm font-medium text-gray-700 hover:text-blue-500 hover:underline underline-offset-2"
+              >
+                Post Your Blog 
               </Link>
             </nav>
           </div>

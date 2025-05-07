@@ -11,7 +11,9 @@ const BlogView = ({router, id}) => {
     const fetchBlog = async () => {
       console.log("id", id);
       try {
-        const res = await fetch(`/api/${id}`, { method: "GET" });
+        const res = await fetch(`/api/${id}`, {
+           method: "GET" }
+        );
         if (!res.ok) {
           throw new Error("Failed to fetch the blog post.");
         }
@@ -51,6 +53,11 @@ const BlogView = ({router, id}) => {
       }
     }
   };
+
+  const handleBack = (e) => {
+    e.preventDefault();
+    router.push("/blog");
+  }
   console.log("blog view page  ", blog);
 
   if (loading) {
@@ -86,7 +93,13 @@ const BlogView = ({router, id}) => {
           <p className="mb-6 md:text-[15px] text-sm">
             {blog?.content?.charAt(0).toUpperCase() + blog?.content?.slice(1)}
           </p>
-          <div className="flex justify-end">
+          <div className="flex md:justify-end justify-center gap-5">
+            <button
+              onClick={handleBack}
+              className="bg-green-500 hover:bg-green-400 text-white px-5 py-2 text-sm font-medium rounded-md shadow-md transition ease-in-out cursor-pointer"
+            >
+              Back
+            </button>
             <button
               onClick={handleDelete}
               className="bg-red-500 hover:bg-red-400 text-white px-5 py-2 text-sm font-medium rounded-md shadow-md transition ease-in-out cursor-pointer"

@@ -75,7 +75,7 @@ export default function SearchBar() {
           </div>
         </div>
         {/* Language button */}
-        <button className="font-medium flex items-center gap-2 px-3 py-1.5 cursor-pointer border text-sm rounded-lg text-blue-500 hover:bg-blue-50">
+        <button className="font-medium flex items-center gap-2 px-3 py-2 cursor-pointer border text-sm rounded-lg text-blue-500 hover:bg-blue-50">
           <span>Ind - Eng</span>
         </button>
       </div>

@@ -3,24 +3,18 @@ import { useRouter } from "next/navigation";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-const fetchAllBlogData = async () => {
-  const res = await fetch("/api/add-blog", { method: "GET" });
-  return await res.json();
-};
 const CreateNewBlog = () => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
-  const [blogData, setBlogData] = useState([]);
-  const [loading, setLoading] = useState(true);
+  // const [loading, setLoading] = useState(true);
 
+  // useEffect(() => {
+    //   const timer = setTimeout(() => setLoading(false), 100); // Simulate brief loading
+    //   return () => clearTimeout(timer);
+    // }, []);
+  
   const router = useRouter();
-  useEffect(() => {
-    fetchAllBlogData().then((res) => {
-        setBlogData(res?.data || [])
-        setLoading(false);  
-    });
-  }, []);
-
+  
   async function handleSubmit(e) {
     e.preventDefault();
     const res = await fetch("/api/add-blog", {
@@ -33,7 +27,6 @@ const CreateNewBlog = () => {
 
     const data = await res.json();
     if (data?.success) {
-      fetchAllBlogData().then((res) => setBlogData(res?.data || []));
       router.push("/blog");
       alert(data?.message);
     } else {
@@ -41,33 +34,32 @@ const CreateNewBlog = () => {
     }
   }
 
-//   console.log("blogData", blogData);
 
-  if (loading)
-    return (
-      <>
-        <div className="container mx-auto my-7">
+  // if (loading)
+  //   return (
+  //     <>
+  //       <div className="container mx-auto my-7">
 
-          <div className="grid grid-cols-1 gap-6">
-            <div className="p-6 rounded-lg shadow-md bg-white animate-pulse">
-              <div>
-                  <div className="h-10 w-[40%] bg-gray-300 rounded mb-7"></div>
-                  <div className="h-10 bg-gray-300 rounded mb-7"></div>
-                  <div className="h-4 bg-gray-300 rounded mb-3"></div>
-                  <div className="h-4 bg-gray-300 rounded mb-3"></div>
-                  <div className="h-4 bg-gray-300 rounded mb-3"></div>
-                  <div className="h-4 bg-gray-300 rounded mb-3"></div>
-                  <div className="h-4 bg-gray-300 rounded mb-7"></div>
+  //         <div className="grid grid-cols-1 gap-6">
+  //           <div className="p-6 rounded-lg shadow-md bg-white animate-pulse">
+  //             <div>
+  //                 <div className="h-10 w-[40%] bg-gray-300 rounded mb-7"></div>
+  //                 <div className="h-10 bg-gray-300 rounded mb-7"></div>
+  //                 <div className="h-4 bg-gray-300 rounded mb-3"></div>
+  //                 <div className="h-4 bg-gray-300 rounded mb-3"></div>
+  //                 <div className="h-4 bg-gray-300 rounded mb-3"></div>
+  //                 <div className="h-4 bg-gray-300 rounded mb-3"></div>
+  //                 <div className="h-4 bg-gray-300 rounded mb-7"></div>
 
-                <div className="mt-4">
-                    <div className="h-10 bg-green-200 rounded-md"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </>
-    );
+  //               <div className="mt-4">
+  //                   <div className="h-10 bg-green-200 rounded-md"></div>
+  //               </div>
+  //             </div>
+  //           </div>
+  //         </div>
+  //       </div>
+  //     </>
+  //   );
 
   return (
     <>

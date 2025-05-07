@@ -17,7 +17,7 @@ const Footer = () => {
   return (
     <>
       <div className="bg-gray-50 text-gray-700 pt-5">
-        <div className="container mx-auto pb-10 pt-5">
+        <div className="container mx-auto pb-5 pt-2">
           <div className="grid md:grid-cols-4 lg:gap-6 md:gap-3 gap-5 mx-5">
             {/* Resources */}
             <div>
@@ -76,26 +76,7 @@ const Footer = () => {
                 <FontAwesomeIcon icon={faLocationDot} />
                 <span>Patna, Bihar, India</span>
               </p>
-            </div>
-            {/* Logo & Description */}
-            <div>
-              <div className="flex items-center space-x-2">
-                <img
-                  src="/assets/logoBlog.png"
-                  width={100}
-                  height={100}
-                  alt="Logo"
-                  className="w-10 h-10"
-                />
-                <h2 className="text-xl font-bold text-blue-950 lg:text-nowrap">
-                Blog <span className="text-blue-500">Management</span>
-                </h2>
-              </div>
-              <p className="mt-2 font-medium"> Keep Learning. Keep Growing.</p>
-              <p className="text-xs">
-                Your trusted companion for exploring knowledge, enhancing skills, and mastering subjects at your own pace.
-              </p>
-              <div className="flex space-x-5 mt-4">
+              <div className="flex space-x-5 mt-2">
                 <Link
                   href="#"
                   className="text-gray-600 hover:text-orange-500 text-[20px]"
@@ -126,6 +107,25 @@ const Footer = () => {
                 </Link>
               </div>
             </div>
+            {/* Logo & Description */}
+            <div>
+              <div className="flex items-center space-x-2">
+                <img
+                  src="/assets/logoBlog.png"
+                  width={100}
+                  height={100}
+                  alt="Logo"
+                  className="w-10 h-10"
+                />
+                <h2 className="text-xl font-bold text-blue-950 lg:text-nowrap">
+                  Blog <span className="text-blue-500">Ease</span>
+                </h2>
+              </div>
+              <p className="mt-2 font-medium"> Keep Learning. Keep Growing.</p>
+              <p className="text-sm mt-1">
+                Your trusted companion for exploring knowledge, enhancing skills, and mastering subjects at your own pace.
+              </p>
+            </div>
           </div>
         </div>
         <div className="container mx-auto">
@@ -134,9 +134,9 @@ const Footer = () => {
             <p className="text-xs">
                 *Caution : Beware of Fake Promotions or Offers *Please be cautious and do not engage with any promotional emails, 
                 SMS, or web links that ask you to click on a link and provide your personal details. 
-                All authorized communications from LMS Application Services will come exclusively from our registered domains: 
-                @campusencyclopedia.com, or @campusencyclopedia.in. For any inquiries, you can also reach us through our official WhatsApp channel at 8084863546. 
-                * Campus Encyclopedia Services is not liable for any fraudulent or misleading communications that do not originate from our official domains.
+                All authorized communications from Blog Ease Services will come exclusively from our registered domains: 
+                @blogease.com, or @blogease.in. For any inquiries, you can also reach us through our official WhatsApp channel at 8084863546. 
+                * Blog Ease Services is not liable for any fraudulent or misleading communications that do not originate from our official domains.
             </p>
           </div>
           <hr />                  
