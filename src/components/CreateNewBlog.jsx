@@ -5,14 +5,7 @@ import Footer from "@/components/Footer";
 
 const CreateNewBlog = () => {
   const [title, setTitle] = useState("");
-  const [content, setContent] = useState("");
-  // const [loading, setLoading] = useState(true);
-
-  // useEffect(() => {
-    //   const timer = setTimeout(() => setLoading(false), 100); // Simulate brief loading
-    //   return () => clearTimeout(timer);
-    // }, []);
-  
+  const [content, setContent] = useState("");  
   const router = useRouter();
   
   async function handleSubmit(e) {
@@ -35,32 +28,6 @@ const CreateNewBlog = () => {
   }
 
 
-  // if (loading)
-  //   return (
-  //     <>
-  //       <div className="container mx-auto my-7">
-
-  //         <div className="grid grid-cols-1 gap-6">
-  //           <div className="p-6 rounded-lg shadow-md bg-white animate-pulse">
-  //             <div>
-  //                 <div className="h-10 w-[40%] bg-gray-300 rounded mb-7"></div>
-  //                 <div className="h-10 bg-gray-300 rounded mb-7"></div>
-  //                 <div className="h-4 bg-gray-300 rounded mb-3"></div>
-  //                 <div className="h-4 bg-gray-300 rounded mb-3"></div>
-  //                 <div className="h-4 bg-gray-300 rounded mb-3"></div>
-  //                 <div className="h-4 bg-gray-300 rounded mb-3"></div>
-  //                 <div className="h-4 bg-gray-300 rounded mb-7"></div>
-
-  //               <div className="mt-4">
-  //                   <div className="h-10 bg-green-200 rounded-md"></div>
-  //               </div>
-  //             </div>
-  //           </div>
-  //         </div>
-  //       </div>
-  //     </>
-  //   );
-
   return (
     <>
       <div className="container mx-auto">
@@ -78,10 +45,10 @@ const CreateNewBlog = () => {
               required
             />
             <textarea
-              placeholder="Enter The Description"
+              placeholder="Enter The Description...."
               value={content}
               onChange={(e) => setContent(e.target.value)}
-              className="text-sm border border-orange-500 p-2 h-32 rounded focus:outline-none focus:ring-1 focus:ring-orange-500"
+              className="text-sm border border-orange-500 p-2 md:h-52 h-48 rounded focus:outline-none focus:ring-1 focus:ring-orange-500"
               required
             />
             <button

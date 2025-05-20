@@ -7,7 +7,6 @@ const BlogView = ({router, id}) => {
 
   useEffect(() => {
     if (!id) return; // Wait for the id to be available
-
     const fetchBlog = async () => {
       console.log("id", id);
       try {
@@ -19,7 +18,6 @@ const BlogView = ({router, id}) => {
         }
         const data = await res.json();
         console.log("data ====>", data?.data);
-
         setBlog(data?.data);
       } catch (error) {
         console.error(error);

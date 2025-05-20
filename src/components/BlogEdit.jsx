@@ -9,7 +9,6 @@ const  BlogEdit = ({id, router}) => {
 
   useEffect(() => {
     if (!id) return;
-
     const fetchBlog = async () => {
       try {
         const res = await fetch(`/api/${id}`, { method: "GET" });
@@ -32,7 +31,6 @@ const  BlogEdit = ({id, router}) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     try {
       const res = await fetch(`/api/${id}`, {
         method: "PUT",
@@ -41,9 +39,7 @@ const  BlogEdit = ({id, router}) => {
         },
         body: JSON.stringify({ title, content }),
       });
-
       const blogData = await res.json();
-
       if (blogData?.success) {
         router.push("/blog");
         alert(blogData?.message);

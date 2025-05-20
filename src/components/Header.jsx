@@ -62,17 +62,47 @@ const Header = () => {
         </div>
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="absolute z-50 w-full left-0 lg:hidden px-4 py-4 bg-gray-100 h-56 max-h-72">
+          <div className="absolute z-50 w-full left-0 lg:hidden md:px-10 px-4 py-4 bg-gray-100 h-96 max-h-96">
             <nav className="flex flex-col space-y-4">
+              <Link href="/" 
+                className="text-sm font-medium text-gray-700 hover:text-blue-500 hover:underline underline-offset-2"
+              >
+                  Home
+              </Link>
+              <Link href="/" 
+                className="text-sm font-medium text-gray-700 hover:text-blue-500 hover:underline underline-offset-2"
+              >
+                  About
+              </Link>
+              <Link href="/" 
+                className="text-sm font-medium text-gray-700 hover:text-blue-500 hover:underline underline-offset-2"
+              >
+                  Contact
+              </Link>
+              <Link href="/" 
+                className="text-sm font-medium text-gray-700 hover:text-blue-500 hover:underline underline-offset-2"
+              >
+                  Support
+              </Link>
+              <Link href="/" 
+                className="text-sm font-medium text-gray-700 hover:text-blue-500 hover:underline underline-offset-2"
+              >
+                  Terms & Conditions
+              </Link>
+              <Link href="/" 
+                className="text-sm font-medium text-gray-700 hover:text-blue-500 hover:underline underline-offset-2"
+              >
+                  Privacy Policy
+              </Link>
               <Link
                 href="/blog"
-                className="text-sm font-medium text-gray-700 hover:text-blue-500 hover:underline underline-offset-2"
+                className="text-center text-white bg-green-500 hover:bg-green-400 px-7 py-1.5 text-sm font-medium rounded-md shadow-md transition ease-in-out"
               >
                 All Blogs 
               </Link>
               <Link
                 href="/blog/new"
-                className="text-sm font-medium text-gray-700 hover:text-blue-500 hover:underline underline-offset-2"
+                className="text-center text-white bg-blue-500 hover:bg-blue-400 px-7 py-1.5 text-sm font-medium rounded-md shadow-md transition ease-in-out"
               >
                 Post Your Blog 
               </Link>

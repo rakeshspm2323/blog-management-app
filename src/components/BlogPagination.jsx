@@ -41,7 +41,7 @@ const BlogPagination = () => {
             <div className="h-10 w-[30%] bg-gray-300 rounded"></div>
             <div className="h-10 w-[20%] bg-gray-300 rounded"></div>
           </div>
-          <div className="grid grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 grid-cols-1 gap-6">
             <div className="p-6 rounded-lg shadow-md bg-white animate-pulse">
               <div>
                 <div className="h-10 bg-gray-300 rounded mb-7"></div>
